@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load model
-with open("../model/rf_return_risk_model.pkl", "rb") as f:
+with open("rf_return_risk_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 
@@ -26,8 +26,6 @@ input_data = np.array([[
     product_id_freq, supplier_id_freq
 ]])
 
-if scaler:
-    input_data = scaler.transform(input_data)
 
 if st.button("Predict"):
     pred = model.predict(input_data)[0]
