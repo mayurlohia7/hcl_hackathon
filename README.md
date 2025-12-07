@@ -2,27 +2,20 @@
 HCL HACKATHON
 Problem Statement : Predicting Product return  risk in retail using Classification
 
-
 Team Members Details :
-Team Member Name
-Roll no 
-Email Id
-Bhumika Mishra
-12212002
-12212002@nitkkr.ac.in
-Poonam Kashyap
-12212003
-12212003@nitkkr.ac.in
-Mohit
-12213058
-12213058@nitkkr.ac.in
-Mayur
-12113072
-12113072@nitkkr.ac.in
-Aman
-12211149
-12211149@nitkkr.ac.in
-
+_______________________________________________________
+| Team Member Name | Roll no  | Email Id              |
+_______________________________________________________
+| Bhumika Mishra   | 12212002 | 12212002@nitkkr.ac.in |
+_______________________________________________________
+| Poonam Kashyap   | 12212003 | 12212003@nitkkr.ac.in |
+_______________________________________________________
+| Mohit            | 12213058 | 12213058@nitkkr.ac.in |
+_______________________________________________________
+| Mayur            | 12113072 | 12113072@nitkkr.ac.in |
+_______________________________________________________
+| Aman             | 12211149 | 12211149@nitkkr.ac.in |
+_______________________________________________________
 
 
 
@@ -35,74 +28,43 @@ Retailers often suffer financial losses due to high product return rates. By pre
 Input (X)
 These are the features available at order time only, to avoid future leakage.
  Examples include:
-Product information (category, size, type)
-
-
-Pricing & discount details
-
-
-Customer details (if available)
-
-
-Order context (date/time, day of week, season)
-
-
-Purchase channel (web / mobile / store)
-
-
-Shipment/delivery preferences
-
-
+ -> Product information (category, size, type)
+ -> Pricing & discount details
+ -> Customer details (if available)
+ -> Order context (date/time, day of week, season)
+ -> Purchase channel (web / mobile / store)
+ -> Shipment/delivery preferences
 
 
 
 Output (y)
 A binary label representing return risk:
-1 → Order was returned or cancelled
-
+1 → Order was returned or cancelled!
 
 0 → Order was not returned
 
-
 This label is derived from the dataset’s status column (e.g., returned, is_returned, status, etc.).
 
-
 2. Expected Target Value
-
-
-
-
 The project predicts a binary output:
 Predicted Value
 Meaning
-0
-The order is not likely to be returned
-1
-The order is likely to be returned
+0 : The order is not likely to be returned
+1 : The order is likely to be returned
+
 
 The model outputs both:
 A class prediction (0 or 1)
 
-
 A probability score (0.0–1.0) representing return risk
-
-
 Example:
  0.72 return probability → High likelihood of return.
 
 
-
-
 3. End-to-End Project Pipeline (For README)
-
-
 3.1 Data Ingestion
 Load a public retail dataset from Kaggle or other open-source portals.
-
-
 Import the data into the notebook using pandas.
-
-
 Inspect the first few rows, datatypes, and column descriptions.
 
 
@@ -111,19 +73,11 @@ Libraries: pandas
 
  3.2 Data Preprocessing
 Tasks include:
-Handling missing values
-
-
-Removing duplicates
-
-
-Fixing incorrect datatypes
-
-
-Dropping irrelevant or leakage columns
-
-
-Standardizing categorical values
+ -> Handling missing values
+ -> Removing duplicates
+ -> Fixing incorrect datatypes
+ -> Dropping irrelevant or leakage columns
+ -> Standardizing categorical values
 
 
 Libraries: pandas, scikit-learn
@@ -131,21 +85,12 @@ Libraries: pandas, scikit-learn
 
 3.3 Exploratory Data Analysis (EDA)
 Perform analysis to understand patterns:
-Class distribution (returned vs not returned)
-
-
-Product category return rates
-
-
-Price vs return probability
-
-
-Channel return behavior
-
-
-Seasonal or day-of-week trends
-
-
+ -> Class distribution (returned vs not returned)
+ -> Product category return rates
+ -> Price vs return probability
+ -> Channel return behavior
+ -> Seasonal or day-of-week trends
+ 
 Libraries: matplotlib, seaborn
  Key functions: sns.countplot(), sns.boxplot(), plt.hist()
 
@@ -153,18 +98,10 @@ Libraries: matplotlib, seaborn
 
 3.4 Feature Engineering
 Create meaningful new features such as:
-Time-based features (day, month, season)
-
-
-Discount percentage
-
-
-Price bins
-
-
-Encoded categorical variables
-
-
+ -> Time-based features (day, month, season)
+ -> Discount percentage
+ -> Price bins
+ -> Encoded categorical variables
 Libraries: pandas, scikit-learn
  Key functions:
  OneHotEncoder, StandardScaler, pd.to_datetime()
@@ -174,11 +111,7 @@ Libraries: pandas, scikit-learn
 3.5 Feature Selection
 Identify relevant columns for modeling and remove:
 Highly correlated features
-
-
 Unnecessary identifiers
-
-
 Post-purchase information (to avoid leakage)
 
 
@@ -189,27 +122,15 @@ Libraries: pandas, scikit-learn
 3.6 Model Selection
 Evaluate multiple models:
 Logistic Regression
-
-
 Random Forest
-
-
 Gradient Boosting
-
-
 XGBoost (optional)
 
 
 Choose the model that balances:
 Precision
-
-
 Recall
-
-
 F1-score
-
-
 ROC-AUC
 
 
@@ -237,16 +158,9 @@ This file will be used inside the Streamlit UI.
 3.9 Streamlit UI Application (Frontend + Backend Combined)
 Streamlit will:
 Accept user inputs (price, channel, category, etc.)
-
-
 Pass inputs to the loaded model
-
-
 Display return risk probability
-
-
 Provide interpretation or explanation
-
 
 Libraries: streamlit, pandas, joblib
  Key functions:
@@ -264,19 +178,12 @@ Return risk probability (0–1)
 
 
 Model prediction (Returned / Not Returned)
-
-
 Optional: insights or recommendations
 
 
 
 
-
 SYSTEM ARCHITECTURE DIAGRAM:
-
-
-
-
 
 
 
